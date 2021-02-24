@@ -6,11 +6,11 @@
     # S Database Explorer (SDE)
     # Version 2.0.0
     # Created: August 14, 2015 (1.0.0)
-    # Created: October 1, 2020 (2.0.0)
+    # Modified: October 1, 2020 (2.0.0)
     # Author: Md. Ashraful Alam Shemul (AAShemul)
     # Powered By: S Technologies Limited - STechBD.Net
-    # Email: aashemul@gmail.com
-    # Website: SDE.STechBD.Net
+    # Email: projects@stechbd.net
+    # Website: Projects.STechBD.Net/SDE
 
 */
 
