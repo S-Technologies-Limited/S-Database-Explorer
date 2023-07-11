@@ -1,0 +1,22 @@
+{
+  "name": "stechbd/sde",
+  "autoload":
+  {
+	"psr-4":
+	{
+	  "STechBD\\SDE\\": "src/"
+	}
+  },
+  "authors":
+  [
+	{
+	  "name": "S Technologies",
+	  "email": "project@stechbd.net"
+	},
+	{
+	  "name": "Md. Ashraful Alam Shemul",
+	  "email": "ceo@stechbd.net"
+	}
+  ],
+  "require": {}
+}
