@@ -3,7 +3,7 @@
 
 /**
  * Project: S Database Explorer (SDE)
- * Description: S Database Engine (SDE) is a simple and lightweight MySQL database explorer library based on PHP and PDO.
+ * Description: S Database Explorer (SDE) is a simple and lightweight MySQL database explorer library based on PHP and PDO.
  * Version: 3.0.0
  * Version Code: 3
  * Since: 1.0.0
@@ -26,7 +26,7 @@ use JsonException;
 
 
 /**
- * The main class of S Database Engine.
+ * The main class of S Database Explorer.
  *
  * @since 1.0.0
  */
