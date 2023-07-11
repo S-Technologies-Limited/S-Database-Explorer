@@ -242,7 +242,7 @@ $sde->json('table_name');
 
 ## License
 
-SDE is open-sourced software licensed under the [GPL-3.0 license](LICENSE).
+SDE is open-sourced software licensed under the [GPLv3 license](LICENSE).
 
 ## Credits
 
