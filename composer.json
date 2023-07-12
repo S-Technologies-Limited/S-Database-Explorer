@@ -16,9 +16,7 @@
 	  "email": "ceo@stechbd.net"
 	}
   ],
-  "require": {
-	"php": "^7.4"
-  },
+  "require": {},
   "require-dev": {},
   "minimum-stability": "stable"
 }
