@@ -1,14 +1,12 @@
 {
   "name": "stechbd/sde",
-  "autoload":
-  {
-	"psr-4":
-	{
+  "description": "SDE is a PHP library for creating and manipulating data structures.",
+  "autoload": {
+	"psr-4": {
 	  "STechBD\\SDE\\": "src/"
 	}
   },
-  "authors":
-  [
+  "authors": [
 	{
 	  "name": "S Technologies",
 	  "email": "project@stechbd.net"
@@ -18,5 +16,7 @@
 	  "email": "ceo@stechbd.net"
 	}
   ],
-  "require": {}
+  "require": {
+	"php": "^7.4"
+  }
 }

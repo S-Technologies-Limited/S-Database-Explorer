@@ -1,18 +1,29 @@
 # Changelog of S Database Explorer (SDE)
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Table of Contents
 
-- [Version 3.0.0 (July 13, 2023)](#version-300-july-13-2023)
-- [Version 2.0.0 (December 7, 2017)](#version-200-december-7-2017)
-- [Version 1.0.0 (August 14, 2015)](#version-100-august-14-2015)
+- [Version 3.0.0 (July 13, 2023)](#version-300)
+- [Version 2.0.0 (December 7, 2017)](#version-200)
+- [Version 1.0.0 (August 14, 2015)](#version-100)
 
-## Version 3.0.0 (July 13, 2023)
+## Version 3.0.0
 
-Version Code: 3
+- Release Date: July 13, 2023
+- Version Code: 3
+- Release type: Major
+- Stability: Stable
 
-Version 3.0.0 is a major release of SDE. It is a complete rewrite of the library. It has the following changes:
+### Requirements
+
+- PHP Version: 7.4 or higher
+- PHP Extensions: PDO, JSON
+- MySQL Version: 8.0 or higher
+
+Version 3.0.0 is a major release of S Database Explorer (SDE). It is a complete rewrite of the library. It is now compatible with PHP 7.4 or higher. It uses PDO instead of MySQLi.
+
+### Changes
 
 - Added support for PHP 7.4 or higher.
 - Replaced MySQLi with PDO.
@@ -21,19 +32,59 @@ Version 3.0.0 is a major release of SDE. It is a complete rewrite of the library
 - Renamed number of rows count method to `count()`.
 - Added JSON output method.
 - Added sum method.
+- Added `CHANGELOG.md` file.
+- Added `composer` support.
 
-## Version 2.0.0 (December 7, 2017)
+### Affected Files
 
-Version Code: 2
+- [src/SDE.php](src/SDE.php)
+- [CHANGELOG.md](CHANGELOG.md)
+- [composer.json](composer.json)
+- [composer.lock](composer.lock)
+- [README.md](README.md)
 
-Version 2.0.0 is a major release of SDE. It has the following changes:
+## Version 2.0.0
+
+Version 2.0.0 is a major release of S Database Explorer (SDE). It supports only MySQLi extension for security reasons.
+
+- Release Date: December 7, 2017 
+- Version Code: 2
+- Release type: Major
+- Stability: Stable
+
+### Requirements
+
+- PHP Version: 5.6 or higher
+- PHP Extensions: MySQLi
+- MySQL Version: 5.7 or higher
+
+### Changes
 
 - Removed MySQL support and kept only MySQLi support.
 
-## Version 1.0.0 (August 14, 2015)
+### Affected Files
 
-Version Code: 1
+- [src/SDE.php](src/SDE.php)
 
-Version 1.0.0 is the first release of SDE.
+## Version 1.0.0
+
+Version 1.0.0 is the initial release of S Database Explorer (SDE). It supports both MySQL and MySQLi extension.
+
+- Release Date: August 14, 2015 
+- Version Code: 1
+- Release type: Major
+- Stability: Stable
+
+### Requirements
+
+- PHP Version: 5.5 or higher
+- PHP Extensions: MySQL, MySQLi
+- MySQL Version: 5.6 or higher
+
+### Changes
 
 - Initial release.
+
+### Affected Files
+
+- Not applicable.
