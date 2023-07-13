@@ -46,7 +46,7 @@ S Database Explorer (SDE) is a simple and lightweight MySQL database explorer li
 
 ## Change log
 
-### Version 3.0.0 (July 13, 2023)
+### Version 3.0.0 (July 14, 2023)
 
 - Added support for PHP 7.4 or higher.
 - Replaced MySQLi with PDO.
@@ -127,7 +127,7 @@ $sde->insert('table_name', [
 ### Updating a record
 
 ```php
-$sde->update('table_name', [
+$sde->update('table_name', 'name' [
     'name' => 'Shemul',
     'email' => 'cto@stechbd.net',
     'password' => '123456'

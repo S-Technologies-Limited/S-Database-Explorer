@@ -4,13 +4,13 @@ All notable changes to this project will be documented in this file. This projec
 
 ## Table of Contents
 
-- [Version 3.0.0 (July 13, 2023)](#version-300)
-- [Version 2.0.0 (December 7, 2017)](#version-200)
-- [Version 1.0.0 (August 14, 2015)](#version-100)
+- [Version 3.0.0](#version-300)
+- [Version 2.0.0](#version-200)
+- [Version 1.0.0](#version-100)
 
 ## Version 3.0.0
 
-- Release Date: July 13, 2023
+- Release Date: July 14, 2023
 - Version Code: 3
 - Release type: Major
 - Stability: Stable
