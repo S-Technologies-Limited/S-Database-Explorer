@@ -46,7 +46,7 @@ S Database Explorer (SDE) is a simple and lightweight MySQL database explorer li
 
 ## Change log
 
-### Version 3.0.0 (July 14, 2023)
+### Version 3.0.0 (July 16, 2023)
 
 - Added support for PHP 7.4 or higher.
 - Replaced MySQLi with PDO.
@@ -86,40 +86,15 @@ require_once __DIR__ . '/vendor/autoload.php';
 ### Connecting to a database
 
 ```php
-$sde = new STechBD\SDE('name', 'username', 'password', 'host');
-```
-
-### Creating a table
-
-```php
-$sde->createTable('table_name', [
-    'id' => [
-        'type' => 'int',
-        'length' => 11,
-        'auto_increment' => true,
-        'primary_key' => true
-    ],
-    'name' => [
-        'type' => 'varchar',
-        'length' => 255
-    ],
-    'email' => [
-        'type' => 'varchar',
-        'length' => 255
-    ],
-    'password' => [
-        'type' => 'varchar',
-        'length' => 255
-    ]
-]);
+$sde = new STechBD\SDE('name', 'username', 'password', 'host', 'prefix');
 ```
 
 ### Inserting a record
 
 ```php
-$sde->insert('table_name', [
-    'name' => 'Shemul',
-    'email' => 'ceo@stechbd.net',
+$sde->insert('users', 'name, email, password', ':name, :email, :password', [
+    'name' => 'John Doe',
+    'email' => 'john@stechbd.net',
     'password' => '123456'
 ]);
 ```
@@ -127,117 +102,98 @@ $sde->insert('table_name', [
 ### Updating a record
 
 ```php
-$sde->update('table_name', 'name' [
-    'name' => 'Shemul',
-    'email' => 'cto@stechbd.net',
-    'password' => '123456'
-], [
-    'id' => 1
+$sde->update('users', 'email = :newEmail', 'email = :oldEmail' [
+	'email' =>  'doe@stechbd.net',
+	'id'    =>  1
 ]);
 ```
 
 ### Deleting a record
 
 ```php
-$sde->delete('table_name', ['id' => 1]);
+$sde->remove('users', 'id = :id', [
+	'id' => 1
+]);
 ```
 
 ### Selecting records
 
+#### Selecting all column
+
 ```php
-$sde->select('*', 'students');
+$sde->select('*', 'users');
 ```
 
+#### Selecting specific columns
+
 ```php
-$sde->select('id, name, email', 'table_name');
+$sde->select('id, name, email', 'users');
 ```
 
-### Selecting all records
+#### Selecting records with where clause
 
 ```php
-$sde->selectAll('table_name', [
-    'id',
-    'name',
-    'email'
+$sde->select('id, name, email', 'users', 'id = :id', false, false, [
+	'id' => 1
 ]);
 ```
 
-### Selecting records with where clause
+#### Selecting records with where and limit clause
 
 ```php
-$sde->selectWhere('table_name', [
-    'id',
-    'name',
-    'email'
-], [
-    'id' => 1
+$sde->select('id, name, email', 'users', 'id = :id', 10, false, [
+	'id' => 1
 ]);
 ```
 
-### Selecting records with where clause and limit
+#### Selecting records with where, limit, and order by clause
 
 ```php
-$sde->selectWhereLimit('table_name', [
-    'id',
-    'name',
-    'email'
-], [
-    'id' => 1
-], 10);
+$sde->select('id, name, email', 'users', 'id = :id', '10, 0', 'id DESC', [
+	'id' => 1
+]);
 ```
 
-### Selecting records with where clause, limit and offset
+#### Selecting records with where, limit, order by, and offset clause
 
 ```php
-$sde->selectWhereLimitOffset('table_name', [
-    'id',
-    'name',
-    'email'
-], [
-    'id' => 1
-], 10, 0);
-```
-
-### Selecting records with where clause, limit, offset and order by
-
-```php
-$sde->selectWhereLimitOffsetOrder('table_name', [
-    'id',
-    'name',
-    'email'
-], [
-    'id' => 1
-], 10, 0, 'id', 'DESC');
+$sde->select('id, name, email', 'users', 'id = :id', '10', 'id DESC', '15', [
+	'id' => 1
+]);
 ```
 
 ### Running custom query
 
 ```php
-$sde->run('SELECT * FROM table_name WHERE id = 1');
-```
-
-### Getting last insert item
-
-```php
-$sde->last('table_name');
-```
-
-### Getting number of rows
-
-```php
-$sde->count('table_name');
-```
-
-### Getting sum of a column
-
-```php
-$sde->sum('table_name', 'column_name');
+$sde->run('SELECT * FROM users WHERE id = 1');
 ```
 
 ### Getting JSON output
 
 ```php
-$sde->json('table_name');
+$sde->json($result);
+```
+
+### Getting last insert item
+
+```php
+$sde->last();
+```
+
+### Getting number of rows
+
+```php
+$sde->count('users', 'id = :id', [
+	'id' => 1
+]);
+```
+
+### Getting sum of a column
+
+```php
+$sde->sum('users', 'salary', 'id = :id', [
+	'id' => 1
+]);
 ```
 
 ## License
@@ -247,7 +203,7 @@ S Database Engine (SDE) is open-sourced software licensed under the [GPLv3 licen
 ## Credits
 
 - [Md. Ashraful Alam Shemul](https://github.com/AAShemul)
-- [All Contributors](../../contributors)
+- [All Contributors](../../CONTRIBUTORS.md)
 
 ## Support
 

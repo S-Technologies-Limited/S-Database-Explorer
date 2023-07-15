@@ -19,6 +19,7 @@
 
 
 namespace STechBD;
+
 use PDO;
 use PDOException;
 use PDOStatement;
@@ -30,9 +31,10 @@ use JsonException;
  *
  * @since 1.0.0
  */
-class SDE {
+class SDE
+{
 	private PDO $connection;
-	private string $prefix;
+	private string $prefix = '';
 
 	/**
 	 * The construction method to load PDO.
@@ -41,20 +43,22 @@ class SDE {
 	 * @param string $username
 	 * @param string $password
 	 * @param string $host
-	 * @param string $prefix
+	 * @param false|string $prefix
 	 *
-	 * @return void
-	 * @throws PDOException
 	 * @since 1.0.0
 	 */
-	public function __construct(string $name, string $username = 'root', string $password = '', string $host = 'localhost', string $prefix = '') {
+	public function __construct(string $name, string $username = 'root', string $password = '', string $host = 'localhost', false|string $prefix = false)
+	{
 		try {
-			$this -> connection = new PDO("mysql:host=$host;dbname=$name;", $username, $password);
-			$this -> connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$this -> connection -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-			$this -> prefix = $prefix;
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			$this->connection = new PDO("mysql:host=$host;dbname=$name;", $username, $password);
+			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+			if ($prefix) {
+				$this->prefix = $prefix . '_';
+			}
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -70,14 +74,15 @@ class SDE {
 	 * @throws PDOException
 	 * @since 1.0.0
 	 */
-	public function insert(string $table, string $column, string $values, array $parameters = []): false|PDOStatement {
+	public function insert(string $table, string $column, string $values, array $parameters = []): false|PDOStatement
+	{
 		try {
-			$statement = 'INSERT INTO `' . $this -> prefix . $table . '` (' . $column . ') VALUES (' . $values . ')';
+			$statement = 'INSERT INTO `' . $this->prefix . $table . '` (' . $column . ') VALUES (' . $values . ')';
 
-			$this -> executeStatement($statement , $parameters);
-			return $this -> last();
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			$this->executeStatement($statement, $parameters);
+			return $this->last();
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -89,31 +94,36 @@ class SDE {
 	 * @param bool|string $condition
 	 * @param bool $limit
 	 * @param string|bool $order
+	 * @param false|string $offset
 	 * @param array $parameters
 	 *
 	 * @return array|false
-	 * @throws PDOException
 	 * @since 1.0.0
 	 */
-	public function select(string $column, string $table, bool $condition = false, bool $limit = false, bool $order = false, array $parameters = []): false|array {
+	public function select(string $column, string $table, false|string $condition = false, false|string $limit = false, false|string $order = false, false|string $offset = false, array $parameters = []): false|array
+	{
 		try {
-			$statement = 'SELECT ' . $column . ' FROM `' . $this -> prefix . $table . '`';
+			$statement = 'SELECT ' . $column . ' FROM `' . $this->prefix . $table . '`';
 
-			if($condition) {
+			if ($condition) {
 				$statement .= ' WHERE ' . $condition;
 			}
 
-			if($limit) {
+			if ($limit) {
 				$statement .= ' LIMIT ' . $limit;
 			}
 
-			if($order) {
+			if ($order) {
 				$statement .= ' ORDER BY ' . $condition;
 			}
 
-			return $this -> executeStatement($statement, $parameters) -> fetchAll();
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			if ($offset) {
+				$statement .= ' OFFSET ' . $offset;
+			}
+
+			return $this->executeStatement($statement, $parameters)->fetchAll();
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -129,12 +139,13 @@ class SDE {
 	 * @throws PDOException
 	 * @since 1.0.0
 	 */
-	public function update(string $table, string $set, string $condition, array $parameters = []): void {
+	public function update(string $table, string $set, string $condition, array $parameters = []): void
+	{
 		try {
-			$statement = 'UPDATE ' . $this -> prefix . $table . ' SET ' . $set . ' WHERE ' . $condition;
-			$this -> executeStatement($statement , $parameters);
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			$statement = 'UPDATE ' . $this->prefix . $table . ' SET ' . $set . ' WHERE ' . $condition;
+			$this->executeStatement($statement, $parameters);
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -149,12 +160,13 @@ class SDE {
 	 * @throws PDOException
 	 * @since 1.0.0
 	 */
-	public function remove(string $table, string $condition, array $parameters = []): false|PDOStatement {
+	public function remove(string $table, string $condition, array $parameters = []): false|PDOStatement
+	{
 		try {
-			$statement = 'DELETE FROM ' . $this -> prefix . $table . ' WHERE ' . $condition;
-			return $this -> executeStatement($statement, $parameters);
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			$statement = 'DELETE FROM ' . $this->prefix . $table . ' WHERE ' . $condition;
+			return $this->executeStatement($statement, $parameters);
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -168,12 +180,12 @@ class SDE {
 	 * @throws PDOException
 	 * @since 3.0.0
 	 */
-	public function run(string $statement, array $parameters = []): false|PDOStatement {
+	public function run(string $statement, array $parameters = []): false|PDOStatement
+	{
 		try {
-			return $this -> executeStatement($statement, $parameters);
-		}
-		catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			return $this->executeStatement($statement, $parameters);
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -186,7 +198,8 @@ class SDE {
 	 * @throws JsonException
 	 * @since 3.0.0
 	 */
-	public function json(array $array = []): string|false {
+	public function json(array $array = []): string|false
+	{
 		return json_encode($array, JSON_THROW_ON_ERROR);
 	}
 
@@ -200,13 +213,14 @@ class SDE {
 	 * @throws PDOException
 	 * @since 3.0.0
 	 */
-	public function executeStatement(string $statement, array $parameters = []): false|PDOStatement {
+	public function executeStatement(string $statement, array $parameters = []): false|PDOStatement
+	{
 		try {
-			$stmt = $this -> connection -> prepare($statement);
-			$stmt -> execute($parameters);
+			$stmt = $this->connection->prepare($statement);
+			$stmt->execute($parameters);
 			return $stmt;
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -216,8 +230,9 @@ class SDE {
 	 * @return string
 	 * @since 3.0.0
 	 */
-	public function last(): string {
-		return $this -> connection -> lastInsertId();
+	public function last(): string
+	{
+		return $this->connection->lastInsertId();
 	}
 
 	/**
@@ -230,19 +245,20 @@ class SDE {
 	 * @throws PDOException
 	 * @since 3.0.0
 	 */
-	public function count(string $table, string $condition = '', array $parameters = []): int {
+	public function count(string $table, string $condition = '', array $parameters = []): int
+	{
 		try {
-			$statement = 'SELECT COUNT(*) FROM ' . $this -> prefix . $table;
+			$statement = 'SELECT COUNT(*) FROM ' . $this->prefix . $table;
 
-			if($condition) {
+			if ($condition) {
 				$statement .= ' WHERE ' . $condition;
 			}
 
-			$stmt = $this -> connection -> prepare($statement);
-			$stmt -> execute($parameters);
-			return $stmt -> fetchColumn();
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			$stmt = $this->connection->prepare($statement);
+			$stmt->execute($parameters);
+			return $stmt->fetchColumn();
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 
@@ -258,19 +274,20 @@ class SDE {
 	 * @throws PDOException
 	 * @since 3.0.0
 	 */
-	public function sum(string $table, string $column, string $condition = '', array $parameters = []): int {
+	public function sum(string $table, string $column, string $condition = '', array $parameters = []): int
+	{
 		try {
-			$statement = 'SELECT SUM(' . $column . ') FROM ' . $this -> prefix . $table;
+			$statement = 'SELECT SUM(' . $column . ') FROM ' . $this->prefix . $table;
 
-			if($condition) {
+			if ($condition) {
 				$statement .= ' WHERE ' . $condition;
 			}
 
-			$stmt = $this -> connection -> prepare($statement);
-			$stmt -> execute($parameters);
-			return $stmt -> fetchColumn();
-		} catch(PDOException $e) {
-			throw new PDOException($e -> getMessage());
+			$stmt = $this->connection->prepare($statement);
+			$stmt->execute($parameters);
+			return $stmt->fetchColumn();
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
 		}
 	}
 }

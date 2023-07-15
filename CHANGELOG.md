@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ## Version 3.0.0
 
-- Release Date: July 14, 2023
+- Release Date: July 16, 2023
 - Version Code: 3
 - Release type: Major
 - Stability: Stable
