@@ -217,14 +217,14 @@ If you discover any security related issues, please email [product@stechbd.net](
 ## Future Plan
 
 - [ ] Create database
-- [ ] Alter table
-- [ ] Create database
 - [ ] Drop database
+- [ ] Create table
+- [ ] Alter table
 - [ ] Drop table
 - [ ] Truncate table
 - [ ] Rename table
-- [ ] Rename column
 - [ ] Add column
+- [ ] Rename column
 - [ ] Drop column
 - [ ] Add index
 - [ ] Drop index
