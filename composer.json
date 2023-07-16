@@ -12,7 +12,7 @@
 	"email": "product@stechbd.net",
 	"chat": "https://www.facebook.com/STechBD.Net/",
 	"docs": "https://docs.stechbd.net/SDE/",
-	"tickets": "https://clients.stechbd.net",
+	"tickets": "https://clients.stechbd.net"
   },
   "autoload": {
 	"psr-4": {
