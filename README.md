@@ -10,8 +10,6 @@ S Database Explorer (SDE) is a simple and lightweight MySQL database explorer li
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Credits](#credits)
-- [Support](#support)
 - [Security](#security)
 - [Future Plan](#future-plan)
 - [Author](#author)
@@ -93,16 +91,17 @@ $sde = new STechBD\SDE('name', 'username', 'password', 'host', 'prefix');
 
 ```php
 $sde->insert('users', 'name, email, password', ':name, :email, :password', [
-    'name' => 'John Doe',
-    'email' => 'john@stechbd.net',
-    'password' => '123456'
+    'name'      =>  'John Doe',
+    'email'     =>  'john@stechbd.net',
+    'password'  =>  '123456',
+    'salary'    =>  '10000'
 ]);
 ```
 
 ### Updating a record
 
 ```php
-$sde->update('users', 'email = :newEmail', 'email = :oldEmail' [
+$sde->update('users', 'email = :email', 'id = :id' [
 	'email' =>  'doe@stechbd.net',
 	'id'    =>  1
 ]);
@@ -200,16 +199,6 @@ $sde->sum('users', 'salary', 'id = :id', [
 
 S Database Engine (SDE) is open-sourced software licensed under the [GPLv3 license](LICENSE).
 
-## Credits
-
-- [Md. Ashraful Alam Shemul](https://github.com/AAShemul)
-- [All Contributors](../../CONTRIBUTORS.md)
-
-## Support
-
-If you are having general issues with this package, feel free to contact us on [STechBD.Net/support](https://www.stechbd.net/support).
-If you believe you have found an issue, please report it using the [GitHub issue tracker](https://github.com/STechBD/SDE/issues), or better yet, fork the repository and submit a pull request.
-
 ## Security
 
 If you discover any security related issues, please email [product@stechbd.net](mailto:product@stechbd.net) instead of using the issue tracker.
@@ -250,6 +239,10 @@ None yet.
 S Technologies is a tech company based in Dhaka, Bangladesh. You'll find an overview of all our open source projects [on our website](https://www.stechbd.net/open-source).
 
 ## Support
+
+If you are having general issues with this package, feel free to contact us on [STechBD.Net/support](https://www.stechbd.net/support).
+
+If you believe you have found an issue, please report it using the [GitHub issue tracker](https://github.com/STechBD/SDE/issues), or better yet, fork the repository and submit a pull request.
 
 * [Home Page](https://www.stechbd.net/project/SDE/)
 * [Documentation](https://docs.stechbd.net/SDE/)

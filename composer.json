@@ -1,6 +1,19 @@
 {
   "name": "stechbd/sde",
+  "version": "3.0.0",
   "description": "SDE is a PHP library for creating and manipulating data structures.",
+  "type": "library",
+  "license": "GPL-3.0",
+  "keywords": ["php", "mysql", "pdo", "database", "sde", "stechbd", "aashemul"],
+  "homepage": "https://www.stechbd.net/project/SDE/",
+  "support": {
+	"issues": "https://github.com/STechBD/SDE/issues",
+	"source": "https://github.com/STechBD/SDE",
+	"email": "product@stechbd.net",
+	"chat": "https://www.facebook.com/STechBD.Net/",
+	"docs": "https://docs.stechbd.net/SDE/",
+	"tickets": "https://clients.stechbd.net",
+  },
   "autoload": {
 	"psr-4": {
 	  "STechBD\\SDE\\": "src/"
@@ -9,16 +22,32 @@
   "authors": [
 	{
 	  "name": "S Technologies",
-	  "email": "project@stechbd.net"
+	  "email": "product@stechbd.net",
+	  "homepage": "https://www.stechbd.net",
+	  "role": "Developer"
 	},
 	{
 	  "name": "Md. Ashraful Alam Shemul",
-	  "email": "ceo@stechbd.net"
+	  "email": "aashemul@gmail.com",
+	  "homepage": "https://www.aashemul.com",
+	  "role": "Author"
 	}
   ],
   "require": {
 	"php": ">=7.4"
   },
   "require-dev": {},
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "scripts": {
+	"test": "phpunit"
+  },
+  "config": {
+	"sort-packages": true,
+	"optimize-autoloader": true,
+	"preferred-install": "dist",
+	"platform": {
+	  "php": "7.4"
+	}
+  }
 }

@@ -80,6 +80,7 @@ class SDE
 			$statement = 'INSERT INTO `' . $this->prefix . $table . '` (' . $column . ') VALUES (' . $values . ')';
 
 			$this->executeStatement($statement, $parameters);
+
 			return $this->last();
 		} catch (PDOException $e) {
 			throw new PDOException($e->getMessage());
@@ -143,6 +144,7 @@ class SDE
 	{
 		try {
 			$statement = 'UPDATE ' . $this->prefix . $table . ' SET ' . $set . ' WHERE ' . $condition;
+
 			$this->executeStatement($statement, $parameters);
 		} catch (PDOException $e) {
 			throw new PDOException($e->getMessage());
@@ -164,6 +166,7 @@ class SDE
 	{
 		try {
 			$statement = 'DELETE FROM ' . $this->prefix . $table . ' WHERE ' . $condition;
+
 			return $this->executeStatement($statement, $parameters);
 		} catch (PDOException $e) {
 			throw new PDOException($e->getMessage());
@@ -198,30 +201,9 @@ class SDE
 	 * @throws JsonException
 	 * @since 3.0.0
 	 */
-	public function json(array $array = []): string|false
+	public function json(array $array): false|string
 	{
 		return json_encode($array, JSON_THROW_ON_ERROR);
-	}
-
-	/**
-	 * Method to execute a statement.
-	 *
-	 * @param string $statement
-	 * @param array $parameters
-	 *
-	 * @return false|PDOStatement
-	 * @throws PDOException
-	 * @since 3.0.0
-	 */
-	public function executeStatement(string $statement, array $parameters = []): false|PDOStatement
-	{
-		try {
-			$stmt = $this->connection->prepare($statement);
-			$stmt->execute($parameters);
-			return $stmt;
-		} catch (PDOException $e) {
-			throw new PDOException($e->getMessage());
-		}
 	}
 
 	/**
@@ -256,6 +238,7 @@ class SDE
 
 			$stmt = $this->connection->prepare($statement);
 			$stmt->execute($parameters);
+
 			return $stmt->fetchColumn();
 		} catch (PDOException $e) {
 			throw new PDOException($e->getMessage());
@@ -285,7 +268,30 @@ class SDE
 
 			$stmt = $this->connection->prepare($statement);
 			$stmt->execute($parameters);
+
 			return $stmt->fetchColumn();
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage());
+		}
+	}
+
+	/**
+	 * Method to execute a statement. This method is used internally.
+	 *
+	 * @param string $statement
+	 * @param array $parameters
+	 *
+	 * @return false|PDOStatement
+	 * @throws PDOException
+	 * @since 3.0.0
+	 */
+	private function executeStatement(string $statement, array $parameters = []): false|PDOStatement
+	{
+		try {
+			$stmt = $this->connection->prepare($statement);
+			$stmt->execute($parameters);
+
+			return $stmt;
 		} catch (PDOException $e) {
 			throw new PDOException($e->getMessage());
 		}
