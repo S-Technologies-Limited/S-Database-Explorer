@@ -1,7 +1,7 @@
 {
   "name": "stechbd/sde",
   "version": "3.0.0",
-  "description": "SDE is a PHP library for creating and manipulating data structures.",
+  "description": "S Database Explorer (SDE) is a simple and lightweight MySQL database explorer library based on PHP and PDO.",
   "type": "library",
   "license": "GPL-3.0",
   "keywords": ["php", "mysql", "pdo", "database", "sde", "stechbd", "aashemul"],
