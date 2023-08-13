@@ -4,7 +4,15 @@
   "description": "S Database Explorer (SDE) is a simple and lightweight MySQL database explorer library based on PHP and PDO.",
   "type": "library",
   "license": "GPL-3.0",
-  "keywords": ["php", "mysql", "pdo", "database", "sde", "stechbd", "aashemul"],
+  "keywords": [
+	"php",
+	"mysql",
+	"pdo",
+	"database",
+	"sde",
+	"stechbd",
+	"aashemul"
+  ],
   "homepage": "https://www.stechbd.net/project/SDE/",
   "support": {
 	"issues": "https://github.com/STechBD/SDE/issues",

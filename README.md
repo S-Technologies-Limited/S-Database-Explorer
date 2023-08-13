@@ -1,6 +1,6 @@
 # S Database Explorer (SDE)
 
-S Database Explorer (SDE) is a simple and lightweight MySQL database explorer library based on PHP and PDO. It is an open source PDO backed PHP library for database management. It is a free and opensource library that helps you to manage your MySQL database.
+**S Database Explorer (SDE)** is a simple and lightweight **MySQL** database explorer library based on **PHP** and PDO. It is a free and open-source database management library that helps you to manage your MySQL database.
 
 ## Table of Contents
 
