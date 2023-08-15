@@ -34,7 +34,6 @@ It fixed some compatibility issues.
 - [src/SDE.php](src/SDE.php)
 - [CHANGELOG.md](CHANGELOG.md)
 - [composer.json](composer.json)
-- [composer.lock](composer.lock)
 - [README.md](README.md)
 
 ## Version 3.0.0
