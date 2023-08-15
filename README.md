@@ -46,7 +46,7 @@
 
 ### Version 3.0.1 (August 15, 2023)
 
-- Bug fixed.
+- Fixed bugs.
 
 ### Version 3.0.0 (July 16, 2023)
 

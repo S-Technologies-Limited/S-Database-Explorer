@@ -27,7 +27,7 @@ It fixed some compatibility issues.
 
 ### Changes
 
-- Bug fixed.
+- Fixed bugs.
 
 ### Affected Files
 
