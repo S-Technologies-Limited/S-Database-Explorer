@@ -4,8 +4,8 @@
 /**
  * Project: S Database Explorer (SDE)
  * Description: S Database Explorer (SDE) is a simple and lightweight MySQL database explorer library based on PHP and PDO.
- * Version: 3.0.0
- * Version Code: 3
+ * Version: 3.0.1
+ * Version Code: 4
  * Since: 1.0.0
  * Author: Md. Ashraful Alam Shemul
  * Email: ceo@stechbd.net
@@ -14,7 +14,7 @@
  * Homepage: https://www.stechbd.net
  * Contact: product@stechbd.net
  * Created: August 14, 2015
- * Modified: July 11, 2023
+ * Modified: August 15, 2023
  */
 
 
