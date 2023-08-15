@@ -44,15 +44,21 @@
 
 ## Change log
 
+### Version 3.0.1 (August 15, 2023)
+
+- Bug fixed.
+
 ### Version 3.0.0 (July 16, 2023)
 
 - Added support for PHP 7.4 or higher.
 - Replaced MySQLi with PDO.
-- Renamed custom query method to `run()`.
-- Renamed last insert item method to `last()`.
-- Renamed number of rows count method to `count()`.
-- Added JSON output method.
-- Added sum method.
+- Renamed 'custom query' method to `run()`.
+- Renamed 'last insert item' method to `last()`.
+- Renamed 'number of rows count' method to `count()`.
+- Added 'JSON output' method.
+- Added 'sum' method.
+- Added `CHANGELOG.md` file.
+- Added `composer` support.
 
 ### Version 2.0.0 (December 7, 2017)
 

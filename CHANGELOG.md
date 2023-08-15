@@ -59,11 +59,11 @@ It uses PDO instead of MySQLi.
 
 - Added support for PHP 7.4 or higher.
 - Replaced MySQLi with PDO.
-- Renamed custom query method to `run()`.
-- Renamed last insert item method to `last()`.
-- Renamed number of rows count method to `count()`.
-- Added JSON output method.
-- Added sum method.
+- Renamed 'custom query' method to `run()`.
+- Renamed 'last insert item' method to `last()`.
+- Renamed 'number of rows count' method to `count()`.
+- Added 'JSON output' method.
+- Added 'sum' method.
 - Added `CHANGELOG.md` file.
 - Added `composer` support.
 
