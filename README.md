@@ -73,7 +73,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Installation
 
-S Database Explorer (SDE) can be installed using composer:
+S Database Explorer (SDE) can be used directly using downloaded package or can be installed using composer:
 
 ```bash
 composer require stechbd/sde
@@ -207,7 +207,7 @@ S Database Engine (SDE) is open-sourced software licensed under the [GPLv3 licen
 
 ## Security
 
-If you discover any security related issues, please email [product@stechbd.net](mailto:product@stechbd.net) instead of using the issue tracker.
+If you discover any security-related issues, please email [product@stechbd.net](mailto:product@stechbd.net) instead of using the issue tracker.
 
 ## Future Plan
 
@@ -234,7 +234,7 @@ If you discover any security related issues, please email [product@stechbd.net](
 
 ## Author
 
-* [Md. Ashraful Alam Shemul](https://github.com/AAShemul)
+- [Md. Ashraful Alam Shemul](https://github.com/AAShemul)
 
 ## Contributors
 
@@ -242,7 +242,11 @@ None yet.
 
 ## About S Technologies
 
-S Technologies is a tech company based in Dhaka, Bangladesh. You'll find an overview of all our open source projects [on our website](https://www.stechbd.net/open-source).
+**S Technologies** (**STechBD.Net**) is a research-based technology company in Bangladesh.
+It was founded in 2013.
+It provides services like domain registration, web hosting, web servers, software development, AI model development, software as a service (SasS), UI/UX design, SEO, business solutions, etc.
+**S Technologies** has been working in research of new technologies especially in artificial intelligence, and developing new products.
+You'll find an overview of all our open source products [on our website](https://www.stechbd.net/open-source).
 
 ## Support
 
@@ -250,37 +254,37 @@ If you are having general issues with this package, feel free to contact us on [
 
 If you believe you have found an issue, please report it using the [GitHub issue tracker](https://github.com/STechBD/SDE/issues), or better yet, fork the repository and submit a pull request.
 
-* [Home Page](https://www.stechbd.net/project/SDE/)
-* [Documentation](https://docs.stechbd.net/SDE/)
-* [GitHub Issues](https://github.com/STechBD/SDE/issues)
-* [Composer Package](https://packagist.org/packages/stechbd/sde)
-* [Email](mailto:product@stechbd.net)
-* [Support Page](https://www.stechbd.net/support)
-* [Contact Form](https://www.stechbd.net/contact)
-* [Facebook](https://www.facebook.com/STechBD.Net)
-* [Twitter](https://twitter.com/STechBD_Net)
-* [LinkedIn](https://www.linkedin.com/company/STechBD)
+- [Home Page](https://www.stechbd.net/product/S-Database-Explorer)
+- [Documentation](https://docs.stechbd.net/S-Database-Explorer/)
+- [GitHub Issues](https://github.com/STechBD/S-Database-Explorer/issues)
+- [Composer Package](https://packagist.org/packages/STechBD/SDE)
+- [Email](mailto:product@stechbd.net)
+- [Support Page](https://www.stechbd.net/support)
+- [Contact Form](https://www.stechbd.net/contact)
+- [Facebook](https://www.facebook.com/STechBD.Net)
+- [X (Twitter)](https://twitter.com/STechBD_Net)
+- [LinkedIn](https://www.linkedin.com/company/STechBD)
+- [Instagram](https://www.instagram.com/STechBD.Net)
+- [YouTube](https://www.youtube.com/channel/STechBD)
 
 ## Hire Us
 
-* [Web App Development](https://www.stechbd.net/web-development)
-* [Android App Development](https://www.stechbd.net/android-app-development)
-* [iOS App Development](https://www.stechbd.net/ios-app-development)
+- [AI App Development](https://www.stechbd.net/ai-development)
+- [Web App Development](https://www.stechbd.net/web-development)
+- [Android App Development](https://www.stechbd.net/android-app-development)
+- [iOS App Development](https://www.stechbd.net/ios-app-development)
 
 ## Contribute
 
-* [GitHub](https://github.com/STechBD/SDE)
+- [GitHub](https://github.com/STechBD/S-Database-Explorer)
 
-## Privacy Policy
+## More
 
-* [Privacy Policy](https://www.stechbd.net/privacy)
-
-## Terms & Conditions
-
-* [Terms & Conditions](https://www.stechbd.net/terms)
-* [Refund Policy](https://www.stechbd.net/refund-policy)
-* [Software License Agreement](https://www.stechbd.net/software-license-agreement)
+- [Privacy Policy](https://www.stechbd.net/privacy)
+- [Terms & Conditions](https://www.stechbd.net/terms)
+- [Refund Policy](https://www.stechbd.net/refund-policy)
+- [Software License Agreement](https://www.stechbd.net/software-license-agreement)
 
 ## Copyright
 
-© 2013-23 **[S Technologies](https://www.stechbd.net)**. All rights reserved.
+© 2013-24 **[S Technologies](https://www.stechbd.net)**. All rights reserved.
